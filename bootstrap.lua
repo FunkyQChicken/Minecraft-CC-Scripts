@@ -8,6 +8,9 @@ local s = http.get(
   .. script_name
 ).readAll()
 
-fs.open("./script.lua", "w").write(s)
+local f = fs.open("./script.lua", "w")
+f.write(s)
+f.close()
 
+shell.run("./script.lua")
 
