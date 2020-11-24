@@ -6,7 +6,7 @@ function err(message)
 end
 
 function notable(block)
-  return block.name.find("ore")  == nil
+  return string.find(block.name, "ore")  == nil
 end
 
 function vein_mine()
