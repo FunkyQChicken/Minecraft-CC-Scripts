@@ -68,7 +68,7 @@ end
 
 function fuel()
   t.select(1)
-  if t.getFuelLevel() <= t.getFuelLimit() - 80 then
+  if t.getFuelLevel() <= 300 then
     t.refuel(1)
   end
 end
