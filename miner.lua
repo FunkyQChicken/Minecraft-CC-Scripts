@@ -63,7 +63,7 @@ end
 function unload()
   for i = 2, 16, 1 do
     t.select(i)
-    t.dropDown(i)
+    t.dropDown()
   end
 end
 
