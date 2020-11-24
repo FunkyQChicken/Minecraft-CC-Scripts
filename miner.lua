@@ -14,7 +14,6 @@ function vein_mine()
 
   -- Check around
   for i = 0,3,1 do
-    print(i)
     t.turnLeft()
     local exists, data = t.inspect()
     if exists and notable(data) then
@@ -80,6 +79,7 @@ function mine()
     local distance = 0
 
     -- Go to mineshaft location
+    print("Heading to mineshaft #" .. shaft_number)
     for i = 0,shaft_number * 7, 1 do
       t.dig()
       t.forward()
@@ -88,6 +88,7 @@ function mine()
     t.turnLeft()
 
     -- Mine until inventory full
+    print("Mining.")
     repeat 
       vein_mine()
       t.dig()
@@ -96,12 +97,14 @@ function mine()
     until full()
 
     -- Retreat from mineshaft
+    print("Heading back.")
     for i = 1, distance, 1 do
       t.back()
       fuel()
     end
 
     -- Retreat to chest
+    print("Going to chest")
     t.turnRight()
     for i = 0,shaft_number * 7, 1 do
       t.back()
@@ -111,6 +114,7 @@ function mine()
     shaft_number = shaft_number + 1
 
     -- Unload and Refuel
+    print("Unloading.")
     unload()
   until false
 end
