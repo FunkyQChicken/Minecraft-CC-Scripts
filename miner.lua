@@ -52,7 +52,7 @@ function vein_mine()
 end
 
 function full()
-  for i = 0, 15, 1 do 
+  for i = 2, 16, 1 do 
     if t.getItemCount(i) == 0 then
       return false
     end
@@ -61,14 +61,14 @@ function full()
 end
 
 function unload()
-  for i = 1, 15, 1 do
-    t.select(1)
+  for i = 2, 16, 1 do
+    t.select(i)
     t.dropDown(i)
   end
 end
 
 function fuel()
-  t.select(0)
+  t.select(1)
   if t.getFuelLevel() <= t.getFuelLimit() - 80 then
     t.refuel(1)
   end
