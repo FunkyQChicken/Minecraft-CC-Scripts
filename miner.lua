@@ -31,7 +31,7 @@ function mine()
   repeat 
     print("forward!")
     vein_mine()
-    t.mine()
+    mine()
     t.forward()
   until false
 end
