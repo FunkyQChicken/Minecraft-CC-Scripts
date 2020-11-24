@@ -96,7 +96,7 @@ function mine()
     until full()
 
     -- Retreat from mineshaft
-    for i = 0,distance,1 do
+    for i = 1, distance, 1 do
       t.back()
       fuel()
     end
