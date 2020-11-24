@@ -6,8 +6,7 @@ function err(message)
 end
 
 function notable(block)
-  print(data)
-  return true
+  return block.name.find("ore")  == nil
 end
 
 function vein_mine()
@@ -16,6 +15,7 @@ function vein_mine()
     t.turnLeft()
     local exists, data = t.inspect()
     if exists and notable(data) then
+      print("ore!")
       if not t.dig() then
         err("cannot break block")
       end
@@ -29,6 +29,7 @@ end
 
 function mine()
   repeat 
+    print("forward!")
     vein_mine()
     t.mine()
     t.forward()
